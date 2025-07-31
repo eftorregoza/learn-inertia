@@ -13,6 +13,12 @@ Route::get('/', function () {
 
 
 Route::get('/users', function () {
-    sleep(5);
+    sleep(1);
     return Inertia::render('Users');
+});
+
+
+Route::post('/logout', function () {
+    dump('Logging out...');
+    dd('Logged out!');
 });

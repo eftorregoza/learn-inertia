@@ -16,7 +16,14 @@ let count = ref(0);
             <button @click="count++">Count: {{ count }}</button>
         </p>
         <p>
-            <Link href="/users">Users</Link>
+            <ul>
+                <li>
+                    <Link href="/users">Users</Link>
+                </li>
+                <li>
+                    <Link href="/logout" method="post" as="button">Logout</Link>
+                </li>
+            </ul>
         </p>
     </div>
 </template>
