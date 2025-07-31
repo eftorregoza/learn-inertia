@@ -10,3 +10,9 @@ Route::get('/', function () {
         'name' => $name
     ]);
 });
+
+
+Route::get('/users', function () {
+    sleep(1);
+    return Inertia::render('Users');
+});
