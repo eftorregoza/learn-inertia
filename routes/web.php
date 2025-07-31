@@ -13,6 +13,6 @@ Route::get('/', function () {
 
 
 Route::get('/users', function () {
-    sleep(1);
+    sleep(5);
     return Inertia::render('Users');
 });
