@@ -1,9 +1,8 @@
 # learn-inertia
 This repository contains my hands-on learning projects and notes while following the [Build Modern Laravel Apps Using Inertia.js](https://laracasts.com/series/build-modern-laravel-apps-using-inertia-js/) series.
 
-A learning playground for building full-stack apps using Laravel as the backend and Vue 3 as the frontend — all without a traditional API.
+A learning playground for building full-stack apps using Laravel, Inertia.js, Vue 3 (Composition API), and Tailwind CSS — with seamless frontend-backend integration, no traditional API required.
 
-This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
