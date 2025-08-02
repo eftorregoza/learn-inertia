@@ -1,13 +1,13 @@
 <script setup>
-import Layout from '../Shared/Layout.vue';
+// import Layout from '../Shared/Layout.vue';
 
 import { ref } from 'vue';
 
-defineOptions({
-    layout: Layout
-});
+// Use the ff below to define a Layout file manually
+// defineOptions({
+//     layout: Layout
+// });
 
-let test = ref('test');
 
 </script>
 

@@ -1,10 +1,5 @@
 <script setup>
-import Layout from '../Shared/Layout.vue';
 import { Link } from '@inertiajs/vue3';
-
-defineOptions({
-    layout: Layout
-});
 
 defineProps({
     time: String
