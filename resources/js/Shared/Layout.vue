@@ -8,7 +8,6 @@ const page = usePage();
 
 const username = computed(() => page.props.auth.user.username);
 
-
 </script>
 
 <template>
