@@ -2,7 +2,7 @@
 import Nav from './Nav.vue';
 
 import { computed } from 'vue';
-import { usePage, Head } from '@inertiajs/vue3';
+import { usePage } from '@inertiajs/vue3';
 
 const page = usePage();
 
