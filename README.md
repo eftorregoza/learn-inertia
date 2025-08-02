@@ -12,7 +12,7 @@ Use [VSCode](https://code.visualstudio.com/)
 
 ## Tech Stack
 
-- Laravel 10+
+- Laravel 12+
 - Vue 3 with `<script setup>`
 - Inertia.js
 - Vite
