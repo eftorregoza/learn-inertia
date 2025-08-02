@@ -19,6 +19,7 @@ createInertiaApp({
             .use(plugin)
             .mount(el)
     },
+    title: title => `Learn Inertia - ${title}`
 });
 
 InertiaProgress.init({

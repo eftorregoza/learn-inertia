@@ -1,5 +1,5 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, Head } from '@inertiajs/vue3';
 
 defineProps({
     time: String
@@ -8,6 +8,11 @@ defineProps({
 </script>
 
 <template>
+
+    <Head>
+        <title>Users</title>
+        <meta type="description" content="Users information" head-key="description">
+    </Head>
     <h1 class="text-3xl">
         Users
     </h1>
