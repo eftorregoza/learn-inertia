@@ -15,15 +15,13 @@ let count = ref(0);
         <p>
             <button @click="count++">Count: {{ count }}</button>
         </p>
-        <p>
-            <ul>
-                <li>
-                    <Link href="/users">Users</Link>
-                </li>
-                <li>
-                    <Link href="/logout" method="post" as="button">Logout</Link>
-                </li>
-            </ul>
-        </p>
+        <ul>
+            <li>
+                <Link href="/users">Users</Link>
+            </li>
+            <li>
+                <Link href="/logout" method="post" as="button" :data="{ foo: 'bar' }">Logout</Link>
+            </li>
+        </ul>
     </div>
 </template>
