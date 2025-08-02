@@ -15,7 +15,10 @@ Route::get('/', function () {
 Route::get('/users', function () {
     return Inertia::render('Users', [
         'time' => now()->toTimeString(),
-        'users' => User::all()
+        // 'users' => User::all() // DO NOT DO THIS when using a client side setup like Inertia as this exposes all columns of the model (User)
+        'users' => User::all()->map(fn($user) => [
+            'name' => $user->name
+        ])
     ]);
 });
 
