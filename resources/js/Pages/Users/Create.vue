@@ -1,15 +1,14 @@
 <script setup>
-import { router } from '@inertiajs/vue3';
-import { reactive } from 'vue';
+import { useForm } from '@inertiajs/vue3';
 
-let form = reactive({
+let form = useForm({
     name: '',
     email: '',
     password: ''
 });
 
 let submit = () => {
-    router.post('/users/create', form);
+    form.post('/users/create');
 };
 </script>
 
@@ -25,6 +24,8 @@ let submit = () => {
 
             <input v-model="form.name" class="border border-gray-400 p-2 w-full" type="text" name="name" id="name"
                 required />
+
+            <div v-if="form.errors.name" v-text="form.errors.name" class="text-red-500 text-xs mt-1"></div>
         </div>
 
         <div class="mb-6">
@@ -32,6 +33,8 @@ let submit = () => {
 
             <input v-model="form.email" class="border border-gray-400 p-2 w-full" type="email" name="email" id="email"
                 required />
+
+            <div v-if="form.errors.email" v-text="form.errors.email" class="text-red-500 text-xs mt-1"></div>
         </div>
 
         <div class="mb-6">
@@ -39,10 +42,13 @@ let submit = () => {
 
             <input v-model="form.password" class="border border-gray-400 p-2 w-full" type="password" name="password"
                 id="password" required />
+
+            <div v-if="form.errors.password" v-text="form.errors.password" class="text-red-500 text-xs mt-1"></div>
         </div>
 
         <div class="mb-6">
-            <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">Submit</button>
+            <button :disabled="form.processing" type="submit"
+                class="bg-blue-400 text-white rounded py-2 px-4 cursor-pointer hover:bg-blue-500 disabled:opacity-70 disabled:cursor-not-allowed">Submit</button>
         </div>
     </form>
 </template>
