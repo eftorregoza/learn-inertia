@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\Rules\Password;
@@ -36,15 +37,22 @@ Route::middleware('auth')->group(function () {
                 ->withQueryString()
                 ->through(fn($user) => [
                     'id' => $user->id,
-                    'name' => $user->name
+                    'name' => $user->name,
+                    'can' => [
+                        'update' => Auth::user()->can('update', $user)
+                    ]
                 ]),
-            'filters' => Request::only(['search'])
+            'filters' => Request::only(['search']),
+            'can' => [
+                'createUser' => Auth::user()->can('create', User::class)
+            ],
+            'testAttr' => true
         ]);
     });
 
     Route::get('/users/create', function () {
         return Inertia::render('Users/Create');
-    });
+    })->can('create', User::class);
 
     Route::post('/users/create', function () {
         $attributes = Request::validate([
@@ -63,5 +71,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/settings', function () {
         return Inertia::render('Settings');
     });
-
 });
