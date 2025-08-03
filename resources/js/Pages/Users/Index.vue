@@ -1,7 +1,7 @@
 <script setup>
 import { Link, router } from '@inertiajs/vue3';
 
-import Pagination from '../Shared/Pagination.vue';
+import Pagination from '../../Shared/Pagination.vue';
 import { ref, watch } from 'vue';
 
 let props = defineProps({
